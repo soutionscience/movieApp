@@ -1,0 +1,26 @@
+<div class="container">
+  <div>
+    
+  </div>
+  <div class="row">
+  <div class="col-md-4" ng-repeat="e in main.movies">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{e.title}}</div>
+      <div class="panel-body">
+        <video width="320" height="240" controls>
+          <source src="./assets/videos/{{e.url}}" type="video/mp4">
+          <source src="movie.ogg" type="video/ogg"> Your browser does not support the video tag.
+        </video>
+        <div class="panel-footer">Description:{{e.description}}</div>
+      </div>
+        <div class="panel-footer">Rating:{{e.ratings}}</div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+
+  </div>
+</div>

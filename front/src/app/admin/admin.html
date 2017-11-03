@@ -1,0 +1,33 @@
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>Upload Videos</h1></div>
+    <div class="panel-body">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Video Title</label>
+          <input type="text" class="form-control" id="videoTitle" placeholder="Enter Video Title" ng-model="admin.title">
+          <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Video Url</label>
+          <input type="file" class="form-control" id="videUrl" placeholder="Video Url" ng-model="admin.filetoupload">
+          <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Video Description</label>
+          <input type="text" class="form-control" id="videoDesc" placeholder="Enter Video Description" ng-model="admin.description">
+          <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Example select</label>
+          <select class="form-control" id="exampleFormControlSelect1" ng-model="admin.ratings">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="admin.upload()">Submit</button>
+      </form>
+    </div>
