@@ -19,10 +19,13 @@ exports.params = function(req, res, next, id) {
 
 exports.post = function(req, res, next) {
     user = new User(req.body)
-    user.save()
-    console.log("user posted")
-    res.status(200);
-    next();
+    user.save(function(err, user){
+      if (err) throw err;
+      var name = user.username;
+      res.json(user)
+      res.end("added "+ name)
+    })
+  
 }
 
 exports.get = function(req, res, next) {

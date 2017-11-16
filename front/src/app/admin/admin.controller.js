@@ -1,17 +1,17 @@
 export class AdminController {
-  constructor ($http) {
+  constructor($http) {
     'ngInject';
-
-   this.http= $http
- 
-
+    this.http = $http
   }
-    upload(){
+  upload() {
 
-  	this.http.post('http://localhost:5000/api/movies',{'title': this.title
-  		, 'url': this.filetoupload, 'description': this.description, 'ratings': this.ratings
-  	})
-  	console.log(this.title+ " "+ this.ratings+" "+ this.url)
+    this.http.post('http://localhost:8000/api/movies', {
+      'title': this.title,
+      'url': this.filetoupload,
+      'description': this.description,
+      'ratings': this.ratings
+    })
+    console.log("here is: " + this.title + " " + this.ratings + " " + this.filetoupload)
   }
 
 }

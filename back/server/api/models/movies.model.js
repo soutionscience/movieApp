@@ -1,4 +1,13 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var comments = new Schema({
+	description: String,
+	ratings:{
+		type: String,
+		required: true
+	}
+})
 
 module.exports = mongoose.model('Movies4',{
 	title:{
@@ -20,11 +29,7 @@ module.exports = mongoose.model('Movies4',{
 		// required: true,
 
 	},
-	ratings:{
-		type: String
-		// required: true,
-
-	}
+	comments:[comments]
 
 
 

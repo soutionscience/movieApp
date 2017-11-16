@@ -1,19 +1,15 @@
 var mongoose = require('mongoose')
-
-module.exports = mongoose.model('MovieUser',{
-	username:{
-
-		type: String,
-		required: true,
-		unique:true
+var Schema = mongoose.Schema;
+var passportLocalMongoose = require('passport-local-mongoose');
 
 
-	},
-	pwd:{
-		type: String,
-		required: true,
 
-	}
-
-
+var User = new Schema({
+    username: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    firstname:String
 })
+
+User.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model('User', User);

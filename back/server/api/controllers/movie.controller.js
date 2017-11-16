@@ -6,9 +6,13 @@ var fs = require('fs');
 exports.post = function(req, res, next) {
         console.log("hitting")
         var form = new formidable.IncomingForm();
+        console.log("this form" + form)
         form.parse(req, function(err, fields, files) {
-            var oldpath = files.filetoupload.path;
-            var newpath = './videos/' + files.filetoupload.name;
+
+            var oldpath = files.req.body.url.path;
+            console.log("old path" + oldpath)
+
+            var newpath = './videos/' + files.req.url.name;
             fs.rename(oldpath, newpath, function(err) {
                 if (err) throw err;
                 console.log("before")

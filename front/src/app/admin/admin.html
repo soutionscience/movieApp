@@ -2,7 +2,7 @@
     <div class="panel-heading">
       <h1>Upload Videos</h1></div>
     <div class="panel-body">
-      <form>
+      <form enctype="multipart/form-data">
         <div class="form-group">
           <label for="exampleInputEmail1">Video Title</label>
           <input type="text" class="form-control" id="videoTitle" placeholder="Enter Video Title" ng-model="admin.title">
@@ -10,7 +10,7 @@
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Video Url</label>
-          <input type="file" class="form-control" id="videUrl" placeholder="Video Url" ng-model="admin.filetoupload">
+          <input type="file" name="filetoupload" class="form-control" id="videUrl" placeholder="Video Url" ng-file="admin.filetoupload">
           <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
         </div>
         <div class="form-group">
